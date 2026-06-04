@@ -1,4 +1,4 @@
-# 🛡️ AegisStream
+#  AegisStream
 
 **Real-Time Behavioral Evaluation and Reliability Observatory for Open-Source LLMs**
 
@@ -8,7 +8,6 @@
 [![Redpanda](https://img.shields.io/badge/Kafka-Redpanda-E50695)](https://redpanda.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-> *Stream first, benchmark later.*
 
 ---
 
