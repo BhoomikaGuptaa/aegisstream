@@ -1,6 +1,6 @@
 #  AegisStream
 
-**Real-Time Behavioral Evaluation and Reliability Observatory for Open-Source LLMs**
+**Real-time LLM reliability monitoring for prompt-response streams**
 
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://python.org)
 [![Docker Compose](https://img.shields.io/badge/Docker-Compose-2496ED?logo=docker)](https://docker.com)
@@ -65,7 +65,7 @@ flowchart TD
 ## Quickstart
 
 ```bash
-git clone https://github.com/yourname/aegisstream
+git clone https://github.com/BhoomikaGuptaa/aegisstream.git
 cd aegisstream
 make up        # build and start all services (~2 min)
 make demo      # seed 500 synthetic events
@@ -80,7 +80,7 @@ make demo      # seed 500 synthetic events
 | Service | Port | Description |
 |---|---|---|
 | `api` | 8000 | FastAPI backend; exposes all metrics, reviews, gate |
-| `dashboard` | 8501 | Streamlit live dashboard (10 pages) |
+| `dashboard` | 8501 | Streamlit dashboard for reliability, review, drift, and deployment metrics |
 | `evaluator` | — | Kafka consumer; runs all evaluators |
 | `producer` | — | Synthetic traffic generator |
 | `redpanda` | 9092 | Kafka-compatible streaming broker |
@@ -216,7 +216,7 @@ Use in CI/CD:
 
 ---
 
-## Research Experiments
+## Evaluation Benchmarks
 
 ```bash
 make benchmark   # run all experiments (saves to /data/experiment_results.json)
