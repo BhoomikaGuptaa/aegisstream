@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment / secrets
+.env
+*.env.local
+
+# Local data
+/data/
+*.db
+*.sqlite
+*.sqlite3
+experiment_results.json
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Docker / logs
+*.log
