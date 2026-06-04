@@ -11,9 +11,9 @@
 
 ---
 
-## Abstract
+## Overview
 
-Offline LLM benchmarks measure capability under controlled conditions. Deployed LLMs encounter adversarial prompts, retrieval failures, silent model drift, latency pressure, and shifting user behavior that static benchmarks cannot capture. **AegisStream** is an open-source research prototype that treats live prompt-response telemetry as behavioral evidence. It applies twelve lightweight evaluators to each event in real time, computes interpretable reliability and safety scores, detects behavioral drift, surfaces a human review queue, and exposes a CI/CD deployment gate — all runnable locally with Docker Compose.
+Offline LLM benchmarks measure capability under controlled conditions. Deployed LLMs encounter adversarial prompts, retrieval failures, silent model drift, latency pressure, and shifting user behavior that static benchmarks cannot capture. **AegisStream** is an open-source monitoring prototype that treats live prompt-response telemetry as behavioral evidence. It applies twelve lightweight evaluators to each event in real time, computes interpretable reliability and safety scores, detects behavioral drift, surfaces a human review queue, and exposes a CI/CD deployment gate — all runnable locally with Docker Compose.
 
 ---
 
@@ -216,7 +216,7 @@ Use in CI/CD:
 
 ---
 
-## Evaluation Benchmarks
+## Benchmarks
 
 ```bash
 make benchmark   # run all experiments (saves to /data/experiment_results.json)

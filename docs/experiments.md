@@ -65,7 +65,7 @@ All experiments run in-process (no Kafka required). They use the same evaluators
 
 **Metrics reported**: `avg_risk_score`, `review_rate_pct`, `blocking_rate_pct`, `top_failure_modes`
 
-**Research question**: Does the risk score scale linearly with injected failure rates? Are some failure modes more visible than others?
+**What to look for**: Whether risk scores increase as failure rates increase, and which failure modes are easiest to catch.
 
 ---
 
@@ -98,7 +98,7 @@ All experiments run in-process (no Kafka required). They use the same evaluators
 
 **Metrics reported**: `review_rate_pct` (proxy for detection rate), `blocking_rate_pct`
 
-**Research interpretation**: A decrease in `review_rate_pct` when an evaluator is removed indicates that evaluator was contributing unique signal. If review_rate doesn't change, the evaluator's signals are redundant with others.
+**How to read it**: If `review_rate_pct` drops when an evaluator is removed, that evaluator was contributing useful signal. If review_rate doesn't change, the evaluator's signals are redundant with others.
 
 ---
 

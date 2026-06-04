@@ -1,11 +1,11 @@
-"""Research Experiment Report page."""
+"""Evaluation Report page."""
 import streamlit as st
 import requests
 import json
 import os
 
 st.set_page_config(page_title="Experiment Report | AegisStream", layout="wide")
-st.title("🔬 Research Experiment Report")
+st.title("🔬 Evaluation Report")
 st.caption(
     "Run and inspect reproducible experiments comparing models, evaluator ablations, "
     "throughput benchmarks, and failure-mode simulations."
@@ -117,8 +117,8 @@ else:
 
 st.divider()
 
-# ── Research questions reminder ───────────────────────────────────────────────
-with st.expander("📋 Research Questions (AegisStream SOAR Submission)"):
+# ── Evaluation notes ───────────────────────────────────────────────
+with st.expander("📋 Evaluation Notes"):
     st.markdown("""
 1. **Can lightweight online evaluators identify LLM outputs requiring human review?**
    — Measurable via review_rate vs blocking_rate in the throughput and model comparison experiments.

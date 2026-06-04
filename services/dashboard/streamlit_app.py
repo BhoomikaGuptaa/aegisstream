@@ -69,7 +69,7 @@ with st.sidebar:
 - Use the **Pages** menu above ↑
     """)
     st.divider()
-    st.caption("AegisStream v1.0.0 | EleutherAI SOAR")
+    st.caption("AegisStream v1.0.0")
 
 # Landing page - Live Overview
 st.markdown('<div class="main-header">🛡️ AegisStream</div>', unsafe_allow_html=True)
