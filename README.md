@@ -73,10 +73,6 @@ make demo      # seed 500 synthetic events
 # open http://localhost:8000/docs  — API
 ```
 
-**Requirements**: Docker Desktop with Compose, 4 GB RAM.
-
-**Note**: the demo traffic intentionally includes risky synthetic examples, so the deployment gate may fail on purpose to show what blocking behavior looks like.
-
 ---
 
 ## Services
@@ -201,17 +197,15 @@ make gate
 #   Model: all | Route: all | Window: 60m
 # ================================================================
 #
-#   STATUS: ✅ PASS
-#
 #   METRICS vs THRESHOLDS
 #   ────────────────────────────────────────────────────────────
 #   Metric                       Value  Threshold  Status
 #   ────────────────────────────────────────────────────────────
-#   review_rate                   12.40      15.00  ✅
-#   avg_risk_score                22.30      35.00  ✅
-#   p95_latency_ms               890.00    3000.00  ✅
-#   injection_rate                 3.20       5.00  ✅
-#   hallucination_rate             7.80      10.00  ✅
+#   review_rate                   12.40      15.00  pass
+#   avg_risk_score                22.30      35.00  pass
+#   p95_latency_ms               890.00    3000.00  pass
+#   injection_rate                 3.20       5.00  pass
+#   hallucination_rate             7.80      10.00  pass
 ```
 
 Use in CI/CD:
@@ -245,16 +239,6 @@ docker compose exec api python scripts/run_experiments.py --experiment ablation
 
 ---
 
-## Research Questions
-
-1. Can lightweight online evaluators identify LLM outputs requiring human review?
-2. Which failure modes are easiest and hardest to detect from prompt-response telemetry alone?
-3. How do open-source models differ in reliability, safety, and cost under simulated live traffic?
-4. Can streaming drift signals detect rising adversarial traffic or hallucination rates?
-5. Can deployment readiness gates reduce risky releases without blocking too many safe outputs?
-
----
-
 ## Tests
 
 ```bash
@@ -277,38 +261,4 @@ DRIFT_START_EVENT=300       # trigger drift sooner for demo
 
 ---
 
-## Limitations
 
-See `docs/limitations.md`. Key points:
-- Evaluators are heuristic; will miss novel attack patterns
-- Synthetic traffic is simplified; real distributions differ
-- SQLite is suitable for development; PostgreSQL recommended at scale
-- Drift detection uses simple rolling windows, not statistical control charts
-
----
-
-## Future Work
-
-- Integrate LLM-as-judge evaluators (e.g., GPT-4 mini for hallucination scoring)
-- Add real Ollama integration for local model evaluation
-- Statistical drift detection (CUSUM, Page-Hinkley)
-- Multi-turn session-level evaluation
-- Prometheus/Grafana metrics export
-- PostgreSQL support for production scale
-- Fine-tuned classifier evaluators as drop-in replacements
-
----
-
-## License
-
-MIT License. See `LICENSE`.
-
----
-
-## SOAR Application
-
-*See `docs/soar_application_summary.md` for the full application statement, elevator pitch, technical explanation, and resume bullets.*
-
----
-
-*AegisStream is a research prototype. Do not use as the sole safety mechanism for production AI systems.*
